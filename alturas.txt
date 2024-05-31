@@ -1,0 +1,8 @@
+Indonesia,Asia,1.58
+Bahrain,Asia,1.651
+Bolivia,South America,1.6
+...
+Uruguay,South America,1.7
+Uzbekistan,Asia,1.754
+Turkey,Euro/Asia,1.74
+...

@@ -1,9 +1,6 @@
 package alturas;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 public class Mundo {
@@ -11,6 +8,10 @@ public class Mundo {
 
     public Mundo(List<Pais> paisList){
         this.paises=paisList;
+    }
+
+    public Mundo(){
+        this.paises=new ArrayList<>();
     }
 
     public List<Pais> getPaises() {

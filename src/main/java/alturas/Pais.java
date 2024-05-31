@@ -3,7 +3,7 @@ package alturas;
 import java.util.Comparator;
 import java.util.Objects;
 
-public class Pais implements Comparator<Pais> {
+public class Pais implements Comparable<Pais> {
     private final String nombre;
     private final String continente;
     private final double altura;
@@ -51,7 +51,7 @@ public class Pais implements Comparator<Pais> {
     }
 
     @Override
-    public int compare(Pais o1, Pais o2) {
-        return o1.nombre.compareToIgnoreCase(o2.nombre);
+    public int compareTo(Pais other) {
+        return this.nombre.compareToIgnoreCase(other.nombre);
     }
 }
