@@ -104,5 +104,33 @@ public class Mundo {
         return mapeoInicial;
     }
 
-    
+    public Map<String, Double> mediaPorContinente(){
+        Map<String, Set<Pais>> paisesPorContinente = paisesPorContinente();
+        Map<String, Double> mediaAlturaPorContinente = new TreeMap<>();
+        for(Map.Entry<String, Set<Pais>> entry : paisesPorContinente.entrySet()){
+            String continente = entry.getKey();
+            Set<Pais> paisSet = entry.getValue();
+            double alturaTotal = 0.0;
+
+            for(Pais pais : paises){
+                alturaTotal+=pais.getAltura();
+            }
+
+            double mediaAltura = alturaTotal/paises.size();
+            mediaAlturaPorContinente.put(continente, mediaAltura);
+        }
+        return mediaAlturaPorContinente;
+    }
+
+    public List<String> continentesConMasPaises(){
+        Map<String, Integer> paisesPorContinente =  numeroDePaisesPorContinente();
+        List<String> continentesMasPaises = new ArrayList<>();
+        int maxPaises = paisesPorContinente.values().stream().max(Integer::compare).orElse(0);
+        for(Map.Entry<String, Integer> entry : paisesPorContinente.entrySet()){
+            if(entry.getValue()==maxPaises){
+                continentesMasPaises.add(entry.getKey());
+            }
+        }
+        return continentesMasPaises;
+    }
 }
