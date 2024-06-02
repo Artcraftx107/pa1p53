@@ -31,12 +31,10 @@ public class Mundo {
                         double altura = Double.parseDouble(hydroPump[2].trim());
                         Pais paisAux = new Pais(nombre, continente, altura);
                         paisList.add(paisAux);
-                        System.out.println("Added: " + paisAux); // Debug statement
-                    } catch (NumberFormatException e) {
-                        System.err.println("Skipping line due to parse error: " + line); // Debug statement
+                        //System.out.println("Added: " + paisAux); // Linea para comprobar que se estan añadiendo a la lista (:
+                    } catch (NumberFormatException ignored) {
+                        //System.err.println("Skipping line due to parse error: " + line); // Linea para debug :)
                     }
-                } else {
-                    System.err.println("Skipping line due to incorrect format: " + line); // Debug statement
                 }
             }
         } catch (IOException e) {
@@ -52,7 +50,7 @@ public class Mundo {
     }
 
     public Map<String, Integer> numeroDePaisesPorContinente(){
-        Map<String, Integer> continentCountMap = new HashMap<>();
+        Map<String, Integer> continentCountMap = new TreeMap<>();
         for(Pais pais : paises){
             String continente = pais.getContinente();
             continentCountMap.put(continente, continentCountMap.getOrDefault(continente, 0)+1);
@@ -60,10 +58,10 @@ public class Mundo {
         return continentCountMap;
     }
 
-    public Map<Double, List<Pais>> paisesPorAltura(){
-        Map<Double, List<Pais>> mapeoAltura = new HashMap<>();
-        for(Pais p : paises){
-            double alturaTruncada = Math.floor((p.getAltura()*10)/10.0);
+    public Map<Double, List<Pais>> paisesPorAltura() {
+        Map<Double, List<Pais>> mapeoAltura = new TreeMap<>();
+        for (Pais p : paises) {
+            double alturaTruncada = Math.floor(p.getAltura() * 10) / 10.0;
             mapeoAltura.computeIfAbsent(alturaTruncada, k -> new ArrayList<>()).add(p);
         }
         return mapeoAltura;
@@ -119,11 +117,11 @@ public class Mundo {
             Set<Pais> paisSet = entry.getValue();
             double alturaTotal = 0.0;
 
-            for(Pais pais : paises){
+            for(Pais pais : paisSet){
                 alturaTotal+=pais.getAltura();
             }
 
-            double mediaAltura = alturaTotal/paises.size();
+            double mediaAltura = alturaTotal/paisSet.size();
             mediaAlturaPorContinente.put(continente, mediaAltura);
         }
         return mediaAlturaPorContinente;
