@@ -15,28 +15,34 @@ public class Mundo {
     }
 
     public List<Pais> getPaises() {
-        return paises;
+        return this.paises;
     }
 
     public static Mundo createFromFile(String file) throws IOException {
-        List<Pais> hehe = new ArrayList<>();
-        try(BufferedReader br = new BufferedReader(new FileReader(file))){
-            String linea;
-            while((linea=br.readLine())!=null){
-                String[] hydroPump = linea.split(",");
-                if(hydroPump.length==3){
-                    try{
-                        Pais paisAux = new Pais(hydroPump[0], hydroPump[1], Double.parseDouble(hydroPump[2]));
-                        hehe.add(paisAux);
-                    }catch (NumberFormatException ignored){
-
+        List<Pais> paisList = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] hydroPump = line.split(",");
+                if (hydroPump.length == 3) {
+                    try {
+                        String nombre = hydroPump[0].trim();
+                        String continente = hydroPump[1].trim();
+                        double altura = Double.parseDouble(hydroPump[2].trim());
+                        Pais paisAux = new Pais(nombre, continente, altura);
+                        paisList.add(paisAux);
+                        System.out.println("Added: " + paisAux); // Debug statement
+                    } catch (NumberFormatException e) {
+                        System.err.println("Skipping line due to parse error: " + line); // Debug statement
                     }
+                } else {
+                    System.err.println("Skipping line due to incorrect format: " + line); // Debug statement
                 }
             }
-        }catch (IOException exception){
-            throw new FileNotFoundException("The file "+file+" does not exist in this route");
+        } catch (IOException e) {
+            throw new FileNotFoundException("The file " + file + " does not exist in this route");
         }
-        return new Mundo(hehe);
+        return new Mundo(paisList);
     }
 
     public static <K,V> void presentaEnConsola(Map<K,V> map){
@@ -142,6 +148,6 @@ public class Mundo {
     }
 
     public void cargar(String file) throws IOException{
-        createFromFile(file);
+        this.paises = createFromFile(file).getPaises();
     }
 }

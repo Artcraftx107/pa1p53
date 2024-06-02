@@ -47,7 +47,7 @@ public class Pais implements Comparable<Pais> {
 
     @Override
     public String toString() {
-        return "("+nombre+", "+continente+", "+altura+")";
+        return "Pais ("+nombre+", "+continente+", "+altura+")";
     }
 
     @Override
