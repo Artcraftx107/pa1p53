@@ -41,7 +41,7 @@ public class Mundo {
 
     public static <K,V> void presentaEnConsola(Map<K,V> map){
         for(Map.Entry<K, V> entry : map.entrySet()){
-            System.out.println("Clave: "+entry.getKey()+", Valor: "+entry.getValue());
+            System.out.println(entry.getKey()+" "+entry.getValue());
         }
     }
 
@@ -57,7 +57,7 @@ public class Mundo {
     public Map<Double, List<Pais>> paisesPorAltura(){
         Map<Double, List<Pais>> mapeoAltura = new HashMap<>();
         for(Pais p : paises){
-            double alturaTruncada = Math.floor(p.getAltura()*10/10.0);
+            double alturaTruncada = Math.floor((p.getAltura()*10)/10.0);
             mapeoAltura.computeIfAbsent(alturaTruncada, k -> new ArrayList<>()).add(p);
         }
         return mapeoAltura;
@@ -133,5 +133,15 @@ public class Mundo {
             }
         }
         return continentesMasPaises;
+    }
+
+    public static <K,V> void presentaEnPW(PrintWriter p, Map<K, V> kvMap){
+        for(Map.Entry<K, V> entry : kvMap.entrySet()){
+            p.println(entry.getKey()+"\t"+entry.getValue());
+        }
+    }
+
+    public void cargar(String file) throws IOException{
+        createFromFile(file);
     }
 }

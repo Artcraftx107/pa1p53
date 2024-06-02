@@ -37,12 +37,12 @@ public class Pais implements Comparable<Pais> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Pais pais = (Pais) o;
-        return this.nombre.equalsIgnoreCase(pais.nombre);
+        return this.nombre.equals(pais.nombre);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nombre.toUpperCase());
+        return Objects.hash(nombre);
     }
 
     @Override
@@ -52,6 +52,6 @@ public class Pais implements Comparable<Pais> {
 
     @Override
     public int compareTo(Pais other) {
-        return this.nombre.compareToIgnoreCase(other.nombre);
+        return this.nombre.compareTo(other.nombre);
     }
 }
