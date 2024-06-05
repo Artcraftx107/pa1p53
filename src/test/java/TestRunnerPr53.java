@@ -1,4 +1,4 @@
-			
+
 //--------------------------------------------------------------------------
 
 
@@ -41,7 +41,7 @@ public class TestRunnerPr53 {
 	//--JUnitTest-----------------------------------------------------------
 	//----------------------------------------------------------------------
 	@Nested
-	@TestInstance(TestInstance.Lifecycle.PER_CLASS) 
+	@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 	public class JUnitTestPais {
 		private Pais p1;
 		@BeforeAll
@@ -66,14 +66,14 @@ public class TestRunnerPr53 {
 		@Test
 		@Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
 		public void countryCtorTest1() {
-			assertAll("countryCtorTest1", 
-				() -> assertEquals("Turkey", p1.getNombre(),
-						 "\n> Error: p1.getNombre():"),
-				() -> assertEquals("Euro/Asia", p1.getContinente(),
-						 "\n> Error: p1.getContinentee():"),
-				() -> assertEquals(1.74, p1.getAltura(), 0.00001,
-						 "\n> Error: p1.getAltura():"));
-		} 
+			assertAll("countryCtorTest1",
+					() -> assertEquals("Turkey", p1.getNombre(),
+							"\n> Error: p1.getNombre():"),
+					() -> assertEquals("Euro/Asia", p1.getContinente(),
+							"\n> Error: p1.getContinentee():"),
+					() -> assertEquals(1.74, p1.getAltura(), 0.00001,
+							"\n> Error: p1.getAltura():"));
+		}
 		@Test
 		@Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
 		public void countryCtorTest2() {
@@ -92,15 +92,15 @@ public class TestRunnerPr53 {
 			Pais p5 = new Pais("TURKEY", "Euro/Asia", 1.74);
 			Pais p6 = new Pais("Iceland", "Europe", 1.81);
 			//------------------------
-			assertAll("countryEqualsTest1", 
-				() -> assertTrue(p1.equals(p2), "\n> Error: p1.equals(p2): "), 
-				() -> assertTrue(p1.equals(p3), "\n> Error: p1.equals(p3): "), 
-				() -> assertTrue(p1.equals(p4), "\n> Error: p1.equals(p4): "), 
-				() -> assertFalse(p1.equals(p5), "\n> Error: p1.equals(p5): "), 
-				() -> assertFalse(p1.equals(p6), "\n> Error: p1.equals(p6): "),
-			//------------------------
-				() -> assertFalse(p1.equals(null), "\n> Error: p1.equals(null): "),
-				() -> assertFalse(p1.equals("Esto es un String"), "\n> Error: p1.equals(\"Esto es un String\"): "));
+			assertAll("countryEqualsTest1",
+					() -> assertTrue(p1.equals(p2), "\n> Error: p1.equals(p2): "),
+					() -> assertTrue(p1.equals(p3), "\n> Error: p1.equals(p3): "),
+					() -> assertTrue(p1.equals(p4), "\n> Error: p1.equals(p4): "),
+					() -> assertFalse(p1.equals(p5), "\n> Error: p1.equals(p5): "),
+					() -> assertFalse(p1.equals(p6), "\n> Error: p1.equals(p6): "),
+					//------------------------
+					() -> assertFalse(p1.equals(null), "\n> Error: p1.equals(null): "),
+					() -> assertFalse(p1.equals("Esto es un String"), "\n> Error: p1.equals(\"Esto es un String\"): "));
 		}
 		@Test
 		@Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
@@ -117,13 +117,13 @@ public class TestRunnerPr53 {
 			Pais p5 = new Pais("TURKEY", "Euro/Asia", 1.74);
 			Pais p6 = new Pais("Iceland", "Europe", 1.81);
 			//------------------------
-			assertAll("countryHashCodeTest1", 
-				() -> assertEquals(p1HashCode, p2.hashCode(), "\n> Error: p2.hashCode(): "), 
-				() -> assertEquals(p1HashCode, p3.hashCode(), "\n> Error: p3.hashCode(): "), 
-				() -> assertEquals(p1HashCode, p4.hashCode(), "\n> Error: p4.hashCode(): "), 
-				//------------------------
-				() -> assertNotEquals(p1HashCode, p5.hashCode(), "\n> Error: p5.hashCode():" ),
-				() -> assertNotEquals(p1HashCode, p6.hashCode(), "\n> Error: p5.hashCode(): "));
+			assertAll("countryHashCodeTest1",
+					() -> assertEquals(p1HashCode, p2.hashCode(), "\n> Error: p2.hashCode(): "),
+					() -> assertEquals(p1HashCode, p3.hashCode(), "\n> Error: p3.hashCode(): "),
+					() -> assertEquals(p1HashCode, p4.hashCode(), "\n> Error: p4.hashCode(): "),
+					//------------------------
+					() -> assertNotEquals(p1HashCode, p5.hashCode(), "\n> Error: p5.hashCode():" ),
+					() -> assertNotEquals(p1HashCode, p6.hashCode(), "\n> Error: p5.hashCode(): "));
 		}
 		@Test
 		@Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
@@ -138,23 +138,23 @@ public class TestRunnerPr53 {
 			Pais p5 = new Pais("TURKEY", "Euro/Asia", 1.74);
 			Pais p6 = new Pais("Iceland", "Europe", 1.81);
 			//------------------------
-			assertAll("countryCompareToTest1", 
-				() -> assertEquals(0, p1.compareTo(p2), "\n> Error: p1.compareTo(p2): "), 
-				() -> assertEquals(0, p1.compareTo(p3), "\n> Error: p1.compareTo(p3): "), 
-				() -> assertEquals(0, p1.compareTo(p4), "\n> Error: p1.compareTo(p4): "),
-			//------------------------
-				() -> assertTrue(p1.compareTo(p5) > 0, "\n> Error: p1.compareTo(p5): "),
-				() -> assertTrue(p5.compareTo(p1) < 0, "\n> Error: p5.compareTo(p1): "),
-			//------------------------
-				() -> assertTrue(p1.compareTo(p6) > 0, "\n> Error: p1.compareTo(p6): "),
-				() -> assertTrue(p6.compareTo(p1) < 0, "\n> Error: p6.compareTo(p1): "));
+			assertAll("countryCompareToTest1",
+					() -> assertEquals(0, p1.compareTo(p2), "\n> Error: p1.compareTo(p2): "),
+					() -> assertEquals(0, p1.compareTo(p3), "\n> Error: p1.compareTo(p3): "),
+					() -> assertEquals(0, p1.compareTo(p4), "\n> Error: p1.compareTo(p4): "),
+					//------------------------
+					() -> assertTrue(p1.compareTo(p5) > 0, "\n> Error: p1.compareTo(p5): "),
+					() -> assertTrue(p5.compareTo(p1) < 0, "\n> Error: p5.compareTo(p1): "),
+					//------------------------
+					() -> assertTrue(p1.compareTo(p6) > 0, "\n> Error: p1.compareTo(p6): "),
+					() -> assertTrue(p6.compareTo(p1) < 0, "\n> Error: p6.compareTo(p1): "));
 		}
 		//------------------------------------------------------------------
 	}
 	//----------------------------------------------------------------------
 	//--JUnitTest-----------------------------------------------------------
 	//----------------------------------------------------------------------
-		private static final String[] inputData = {
+	private static final String[] inputData = {
 			"Albania,Europe,1.74",
 			"Algeria,Africa,1.722",
 			"Argentina,South America,1.745",
@@ -178,20 +178,20 @@ public class TestRunnerPr53 {
 			"Croatia,Europe,1.805",
 			"Cuba,North America,1.68",
 			"Czech Republic,Europe,1.803",
-		};
-		private static final String inputList = normalize("[ Pais ( Albania , Europe , 1.74 ) , Pais ( Algeria , Africa , 1.722 ) , Pais ( Argentina , South America , 1.745 ) , Pais ( Australia , Oceania , 1.756 ) , Pais ( Austria , Europe , 1.792 ) , Pais ( Azerbaijan , Asia , 1.718 ) , Pais ( Bahrain , Asia , 1.651 ) , Pais ( Belgium , Europe , 1.786 ) , Pais ( Bolivia , South America , 1.6 ) , Pais ( Bosnia & Herzegovina , Europe , 1.839 ) , Pais ( Brazil , South America , 1.731 ) , Pais ( Bulgaria , Europe , 1.752 ) , Pais ( Cambodia , Asia , 1.625 ) , Pais ( Cameroon , Africa , 1.706 ) , Pais ( Canada , North America , 1.751 ) , Pais ( Chile , South America , 1.71 ) , Pais ( China , Asia , 1.67 ) , Pais ( Colombia , South America , 1.706 ) , Pais ( Croatia , Europe , 1.805 ) , Pais ( Cuba , North America , 1.68 ) , Pais ( Czech Republic , Europe , 1.803 ) ]");
-		public static Mundo createMundo() throws Exception {
-			Mundo mnd1 = new Mundo();
-			try {
-				createFile("hghts.txt", inputData);
-				mnd1.cargar("hghts.txt");
-			} finally {
-				deleteFile("hghts.txt");
-			}
-			return mnd1;
+	};
+	private static final String inputList = normalize("[ Pais ( Albania , Europe , 1.74 ) , Pais ( Algeria , Africa , 1.722 ) , Pais ( Argentina , South America , 1.745 ) , Pais ( Australia , Oceania , 1.756 ) , Pais ( Austria , Europe , 1.792 ) , Pais ( Azerbaijan , Asia , 1.718 ) , Pais ( Bahrain , Asia , 1.651 ) , Pais ( Belgium , Europe , 1.786 ) , Pais ( Bolivia , South America , 1.6 ) , Pais ( Bosnia & Herzegovina , Europe , 1.839 ) , Pais ( Brazil , South America , 1.731 ) , Pais ( Bulgaria , Europe , 1.752 ) , Pais ( Cambodia , Asia , 1.625 ) , Pais ( Cameroon , Africa , 1.706 ) , Pais ( Canada , North America , 1.751 ) , Pais ( Chile , South America , 1.71 ) , Pais ( China , Asia , 1.67 ) , Pais ( Colombia , South America , 1.706 ) , Pais ( Croatia , Europe , 1.805 ) , Pais ( Cuba , North America , 1.68 ) , Pais ( Czech Republic , Europe , 1.803 ) ]");
+	public static Mundo createMundo() throws Exception {
+		Mundo mnd1 = new Mundo();
+		try {
+			createFile("hghts.txt", inputData);
+			mnd1.cargar("hghts.txt");
+		} finally {
+			deleteFile("hghts.txt");
 		}
+		return mnd1;
+	}
 	@Nested
-	@TestInstance(TestInstance.Lifecycle.PER_CLASS) 
+	@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 	public class JUnitTestMundo {
 		@BeforeAll
 		public void beforeClass() {
@@ -216,16 +216,16 @@ public class TestRunnerPr53 {
 		public void worldCtorTest1() throws Exception {
 			Mundo mnd1 = createMundo();
 			assertEquals(normalize(inputList),
-						 normalize(mnd1.getPaises().toString()),
-						 "\n> Error: mnd1.getPaises():");
+					normalize(mnd1.getPaises().toString()),
+					"\n> Error: mnd1.getPaises():");
 		}
 		@Test
 		@Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
 		public void worldCtorTest2() throws Exception {
 			Mundo mnd1 = new Mundo();
 			assertEquals(normalize("[ ]"),
-						 normalize(mnd1.getPaises().toString()),
-						 "\n> Error: mnd1.getPaises():");
+					normalize(mnd1.getPaises().toString()),
+					"\n> Error: mnd1.getPaises():");
 		}
 		@Test
 		@Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
@@ -242,8 +242,8 @@ public class TestRunnerPr53 {
 				salida = strwrtr.toString();
 			}
 			assertEquals(normalize("dolly juan jack eve joe mary"),
-						 normalize(salida),
-						 "\n> Error: Mundo.presentInPW(map):");
+					normalize(salida),
+					"\n> Error: Mundo.presentInPW(map):");
 		}
 		@Test
 		@Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
@@ -261,7 +261,7 @@ public class TestRunnerPr53 {
 				output = sysOutCapture.sysOutRelease();
 			}
 			assertEquals(normalize("dolly juan jack eve joe mary"),
-						 normalize(output), "\n> Error: Mundo.presentOnConsole(map):");
+					normalize(output), "\n> Error: Mundo.presentOnConsole(map):");
 		}
 		@Test
 		@Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
@@ -270,8 +270,8 @@ public class TestRunnerPr53 {
 			precond(normalize(inputList), normalize(mnd1.getPaises().toString()));
 			//----------------------
 			assertEquals(normalize("{ Africa = 2 , Asia = 4 , Europe = 7 , North America = 2 , Oceania = 1 , South America = 5 }"),
-						 normalize(mnd1.numeroDePaisesPorContinente().toString()),
-						 "\n> Error: mnd1.numberOfCountriesPerContinent():");
+					normalize(mnd1.numeroDePaisesPorContinente().toString()),
+					"\n> Error: mnd1.numberOfCountriesPerContinent():");
 		}
 		@Test
 		@Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
@@ -280,8 +280,8 @@ public class TestRunnerPr53 {
 			precond(normalize(inputList), normalize(mnd1.getPaises().toString()));
 			//----------------------
 			assertEquals(normalize("{ 1.6 = [ Pais ( Bahrain , Asia , 1.651 ) , Pais ( Bolivia , South America , 1.6 ) , Pais ( Cambodia , Asia , 1.625 ) , Pais ( China , Asia , 1.67 ) , Pais ( Cuba , North America , 1.68 ) ] , 1.7 = [ Pais ( Albania , Europe , 1.74 ) , Pais ( Algeria , Africa , 1.722 ) , Pais ( Argentina , South America , 1.745 ) , Pais ( Australia , Oceania , 1.756 ) , Pais ( Austria , Europe , 1.792 ) , Pais ( Azerbaijan , Asia , 1.718 ) , Pais ( Belgium , Europe , 1.786 ) , Pais ( Brazil , South America , 1.731 ) , Pais ( Bulgaria , Europe , 1.752 ) , Pais ( Cameroon , Africa , 1.706 ) , Pais ( Canada , North America , 1.751 ) , Pais ( Chile , South America , 1.71 ) , Pais ( Colombia , South America , 1.706 ) ] , 1.8 = [ Pais ( Bosnia & Herzegovina , Europe , 1.839 ) , Pais ( Croatia , Europe , 1.805 ) , Pais ( Czech Republic , Europe , 1.803 ) ] }"),
-						 normalize(mnd1.paisesPorAltura().toString()),
-						 "\n> Error: mnd1.countriesPerHeight():");
+					normalize(mnd1.paisesPorAltura().toString()),
+					"\n> Error: mnd1.countriesPerHeight():");
 		}
 		@Test
 		@Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
@@ -290,8 +290,8 @@ public class TestRunnerPr53 {
 			precond(normalize(inputList), normalize(mnd1.getPaises().toString()));
 			//----------------------
 			assertEquals(normalize("{ Africa = [ Pais ( Algeria , Africa , 1.722 ) , Pais ( Cameroon , Africa , 1.706 ) ] , Asia = [ Pais ( Azerbaijan , Asia , 1.718 ) , Pais ( Bahrain , Asia , 1.651 ) , Pais ( Cambodia , Asia , 1.625 ) , Pais ( China , Asia , 1.67 ) ] , Europe = [ Pais ( Albania , Europe , 1.74 ) , Pais ( Austria , Europe , 1.792 ) , Pais ( Belgium , Europe , 1.786 ) , Pais ( Bosnia & Herzegovina , Europe , 1.839 ) , Pais ( Bulgaria , Europe , 1.752 ) , Pais ( Croatia , Europe , 1.805 ) , Pais ( Czech Republic , Europe , 1.803 ) ] , North America = [ Pais ( Canada , North America , 1.751 ) , Pais ( Cuba , North America , 1.68 ) ] , Oceania = [ Pais ( Australia , Oceania , 1.756 ) ] , South America = [ Pais ( Argentina , South America , 1.745 ) , Pais ( Bolivia , South America , 1.6 ) , Pais ( Brazil , South America , 1.731 ) , Pais ( Chile , South America , 1.71 ) , Pais ( Colombia , South America , 1.706 ) ] }"),
-						 normalize(mnd1.paisesPorContinente().toString()),
-						 "\n> Error: mnd1.paisesPorContinente():");
+					normalize(mnd1.paisesPorContinente().toString()),
+					"\n> Error: mnd1.paisesPorContinente():");
 		}
 		@Test
 		@Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
@@ -300,8 +300,8 @@ public class TestRunnerPr53 {
 			precond(normalize(inputList), normalize(mnd1.getPaises().toString()));
 			//----------------------
 			assertEquals(normalize("{ A = [ Pais ( Albania , Europe , 1.74 ) , Pais ( Algeria , Africa , 1.722 ) , Pais ( Argentina , South America , 1.745 ) , Pais ( Australia , Oceania , 1.756 ) , Pais ( Austria , Europe , 1.792 ) , Pais ( Azerbaijan , Asia , 1.718 ) ] , B = [ Pais ( Bahrain , Asia , 1.651 ) , Pais ( Belgium , Europe , 1.786 ) , Pais ( Bolivia , South America , 1.6 ) , Pais ( Bosnia & Herzegovina , Europe , 1.839 ) , Pais ( Brazil , South America , 1.731 ) , Pais ( Bulgaria , Europe , 1.752 ) ] , C = [ Pais ( Cambodia , Asia , 1.625 ) , Pais ( Cameroon , Africa , 1.706 ) , Pais ( Canada , North America , 1.751 ) , Pais ( Chile , South America , 1.71 ) , Pais ( China , Asia , 1.67 ) , Pais ( Colombia , South America , 1.706 ) , Pais ( Croatia , Europe , 1.805 ) , Pais ( Cuba , North America , 1.68 ) , Pais ( Czech Republic , Europe , 1.803 ) ] }"),
-						 normalize(mnd1.paisesPorInicial().toString()),
-						 "\n> Error: mnd1.paisesPorInicial():");
+					normalize(mnd1.paisesPorInicial().toString()),
+					"\n> Error: mnd1.paisesPorInicial():");
 		}
 		@Test
 		@Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
@@ -310,8 +310,8 @@ public class TestRunnerPr53 {
 			precond(normalize(inputList), normalize(mnd1.getPaises().toString()));
 			//----------------------
 			assertEquals(normalize("{ Africa = 1.714 , Asia = 1.666 , Europe = 1.788142857142857 , North America = 1.7155 , Oceania = 1.756 , South America = 1.6984000000000001 }"),
-						 normalize(mnd1.mediaPorContinente().toString()),
-						 "\n> Error: mnd1.mediaPorContinente():");
+					normalize(mnd1.mediaPorContinente().toString()),
+					"\n> Error: mnd1.mediaPorContinente():");
 		}
 		@Test
 		@Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
@@ -320,8 +320,8 @@ public class TestRunnerPr53 {
 			precond(normalize(inputList), normalize(mnd1.getPaises().toString()));
 			//----------------------
 			assertEquals(normalize("[ Europe ]"),
-						 normalize(mnd1.continentesConMasPaises().toString()),
-						 "\n> Error: mnd1.continentesConMasPaises():");
+					normalize(mnd1.continentesConMasPaises().toString()),
+					"\n> Error: mnd1.continentesConMasPaises():");
 		}
 		//------------------------------------------------------------------
 		@Test
@@ -331,8 +331,8 @@ public class TestRunnerPr53 {
 			precond(normalize(inputList), normalize(mnd1.getPaises().toString()));
 			//----------------------
 			assertEquals(normalize("[ Pais ( Bolivia , South America , 1.6 ) , Pais ( Cambodia , Asia , 1.625 ) , Pais ( Bahrain , Asia , 1.651 ) , Pais ( China , Asia , 1.67 ) , Pais ( Cuba , North America , 1.68 ) , Pais ( Cameroon , Africa , 1.706 ) , Pais ( Colombia , South America , 1.706 ) , Pais ( Chile , South America , 1.71 ) , Pais ( Azerbaijan , Asia , 1.718 ) , Pais ( Algeria , Africa , 1.722 ) , Pais ( Brazil , South America , 1.731 ) , Pais ( Albania , Europe , 1.74 ) , Pais ( Argentina , South America , 1.745 ) , Pais ( Canada , North America , 1.751 ) , Pais ( Bulgaria , Europe , 1.752 ) , Pais ( Australia , Oceania , 1.756 ) , Pais ( Belgium , Europe , 1.786 ) , Pais ( Austria , Europe , 1.792 ) , Pais ( Czech Republic , Europe , 1.803 ) , Pais ( Croatia , Europe , 1.805 ) , Pais ( Bosnia & Herzegovina , Europe , 1.839 ) ]"),
-						 normalize(mnd1.paisesOrdenadosPorAltura().toString()),
-						 "\n> Error: mnd1.paisesPorAltura():");
+					normalize(mnd1.paisesOrdenadosPorAltura().toString()),
+					"\n> Error: mnd1.paisesPorAltura():");
 		}
 		@Test
 		@Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
@@ -341,8 +341,8 @@ public class TestRunnerPr53 {
 			precond(normalize(inputList), normalize(mnd1.getPaises().toString()));
 			//----------------------
 			assertEquals(normalize("{ Africa = [ Pais ( Cameroon , Africa , 1.706 ) , Pais ( Algeria , Africa , 1.722 ) ] , Asia = [ Pais ( Cambodia , Asia , 1.625 ) , Pais ( Bahrain , Asia , 1.651 ) , Pais ( China , Asia , 1.67 ) , Pais ( Azerbaijan , Asia , 1.718 ) ] , Europe = [ Pais ( Albania , Europe , 1.74 ) , Pais ( Bulgaria , Europe , 1.752 ) , Pais ( Belgium , Europe , 1.786 ) , Pais ( Austria , Europe , 1.792 ) , Pais ( Czech Republic , Europe , 1.803 ) , Pais ( Croatia , Europe , 1.805 ) , Pais ( Bosnia & Herzegovina , Europe , 1.839 ) ] , North America = [ Pais ( Cuba , North America , 1.68 ) , Pais ( Canada , North America , 1.751 ) ] , Oceania = [ Pais ( Australia , Oceania , 1.756 ) ] , South America = [ Pais ( Bolivia , South America , 1.6 ) , Pais ( Colombia , South America , 1.706 ) , Pais ( Chile , South America , 1.71 ) , Pais ( Brazil , South America , 1.731 ) , Pais ( Argentina , South America , 1.745 ) ] }"),
-						 normalize(mnd1.paisesPorContinenteAltura().toString()),
-						 "\n> Error: mnd1.paisesPorAlturaPerContinent():");
+					normalize(mnd1.paisesPorContinenteAltura().toString()),
+					"\n> Error: mnd1.paisesPorAlturaPerContinent():");
 		}
 		@Test
 		@Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
@@ -351,8 +351,8 @@ public class TestRunnerPr53 {
 			precond(normalize(inputList), normalize(mnd1.getPaises().toString()));
 			//----------------------
 			assertEquals(normalize("{ Africa = [ Pais ( Algeria , Africa , 1.722 ) , Pais ( Cameroon , Africa , 1.706 ) ] , Asia = [ Pais ( Azerbaijan , Asia , 1.718 ) , Pais ( China , Asia , 1.67 ) , Pais ( Bahrain , Asia , 1.651 ) , Pais ( Cambodia , Asia , 1.625 ) ] , Europe = [ Pais ( Bosnia & Herzegovina , Europe , 1.839 ) , Pais ( Croatia , Europe , 1.805 ) , Pais ( Czech Republic , Europe , 1.803 ) , Pais ( Austria , Europe , 1.792 ) , Pais ( Belgium , Europe , 1.786 ) , Pais ( Bulgaria , Europe , 1.752 ) , Pais ( Albania , Europe , 1.74 ) ] , North America = [ Pais ( Canada , North America , 1.751 ) , Pais ( Cuba , North America , 1.68 ) ] , Oceania = [ Pais ( Australia , Oceania , 1.756 ) ] , South America = [ Pais ( Argentina , South America , 1.745 ) , Pais ( Brazil , South America , 1.731 ) , Pais ( Chile , South America , 1.71 ) , Pais ( Colombia , South America , 1.706 ) , Pais ( Bolivia , South America , 1.6 ) ] }"),
-						 normalize(mnd1.paisesPorContinenteAlturaDec().toString()),
-						 "\n> Error: mnd1.paisesPorContinenteAlturaDec():");
+					normalize(mnd1.paisesPorContinenteAlturaDec().toString()),
+					"\n> Error: mnd1.paisesPorContinenteAlturaDec():");
 		}
 	}
 	//----------------------------------------------------------------------
@@ -360,19 +360,19 @@ public class TestRunnerPr53 {
 	//----------------------------------------------------------------------
 	@Suite
 	@SelectClasses({ JUnitTestPais.class ,
-				JUnitTestMundo.class
-				})
-				public static class JUnitTestSuite { /*empty*/ }
+			JUnitTestMundo.class
+	})
+	public static class JUnitTestSuite { /*empty*/ }
 	//----------------------------------------------------------------------
 	//--TestRunner-----------------------------------------------------
 	//----------------------------------------------------------------------
 	public static void main(String[] args) {
-		final LauncherDiscoveryRequest request = 
+		final LauncherDiscoveryRequest request =
 				LauncherDiscoveryRequestBuilder.request()
-				.selectors(
-						selectClass(JUnitTestPais.class),
-						selectClass(JUnitTestMundo.class))
-				.build();
+						.selectors(
+								selectClass(JUnitTestPais.class),
+								selectClass(JUnitTestMundo.class))
+						.build();
 
 		final Launcher launcher = LauncherFactory.create();
 		final SummaryGeneratingListener listener = new SummaryGeneratingListener();
@@ -446,126 +446,126 @@ public class TestRunnerPr53 {
 	//----------------------------------------------------------------------
 	private static char normalizeUnicode(char ch) {
 		switch (ch) {
-		case '\n':
-		case '\r':
-		case '\t':
-		case '\f':
-			ch = ' ';
-			break;
-		case '\u20AC':
-			ch = 'E';
-			break;
-		case '\u00A1':
-			ch = '!';
-			break;
-		case '\u00AA':
-			ch = 'a';
-			break;
-		case '\u00BA':
-			ch = 'o';
-			break;
-		case '\u00BF':
-			ch = '?';
-			break;
-		case '\u00C0':
-		case '\u00C1':
-		case '\u00C2':
-		case '\u00C3':
-		case '\u00C4':
-		case '\u00C5':
-		case '\u00C6':
-			ch = 'A';
-			break;
-		case '\u00C7':
-			ch = 'C';
-			break;
-		case '\u00C8':
-		case '\u00C9':
-		case '\u00CA':
-		case '\u00CB':
-			ch = 'E';
-			break;
-		case '\u00CC':
-		case '\u00CD':
-		case '\u00CE':
-		case '\u00CF':
-			ch = 'I';
-			break;
-		case '\u00D0':
-			ch = 'D';
-			break;
-		case '\u00D1':
-			ch = 'N';
-			break;
-		case '\u00D2':
-		case '\u00D3':
-		case '\u00D4':
-		case '\u00D5':
-		case '\u00D6':
-			ch = 'O';
-			break;
-		case '\u00D9':
-		case '\u00DA':
-		case '\u00DB':
-		case '\u00DC':
-			ch = 'U';
-			break;
-		case '\u00DD':
-			ch = 'Y';
-			break;
-		case '\u00E0':
-		case '\u00E1':
-		case '\u00E2':
-		case '\u00E3':
-		case '\u00E4':
-		case '\u00E5':
-		case '\u00E6':
-			ch = 'a';
-			break;
-		case '\u00E7':
-			ch = 'c';
-			break;
-		case '\u00E8':
-		case '\u00E9':
-		case '\u00EA':
-		case '\u00EB':
-			ch = 'e';
-			break;
-		case '\u00EC':
-		case '\u00ED':
-		case '\u00EE':
-		case '\u00EF':
-			ch = 'i';
-			break;
-		case '\u00F0':
-			ch = 'd';
-			break;
-		case '\u00F1':
-			ch = 'n';
-			break;
-		case '\u00F2':
-		case '\u00F3':
-		case '\u00F4':
-		case '\u00F5':
-		case '\u00F6':
-			ch = 'o';
-			break;
-		case '\u00F9':
-		case '\u00FA':
-		case '\u00FB':
-		case '\u00FC':
-			ch = 'u';
-			break;
-		case '\u00FD':
-		case '\u00FF':
-			ch = 'y';
-			break;
+			case '\n':
+			case '\r':
+			case '\t':
+			case '\f':
+				ch = ' ';
+				break;
+			case '\u20AC':
+				ch = 'E';
+				break;
+			case '\u00A1':
+				ch = '!';
+				break;
+			case '\u00AA':
+				ch = 'a';
+				break;
+			case '\u00BA':
+				ch = 'o';
+				break;
+			case '\u00BF':
+				ch = '?';
+				break;
+			case '\u00C0':
+			case '\u00C1':
+			case '\u00C2':
+			case '\u00C3':
+			case '\u00C4':
+			case '\u00C5':
+			case '\u00C6':
+				ch = 'A';
+				break;
+			case '\u00C7':
+				ch = 'C';
+				break;
+			case '\u00C8':
+			case '\u00C9':
+			case '\u00CA':
+			case '\u00CB':
+				ch = 'E';
+				break;
+			case '\u00CC':
+			case '\u00CD':
+			case '\u00CE':
+			case '\u00CF':
+				ch = 'I';
+				break;
+			case '\u00D0':
+				ch = 'D';
+				break;
+			case '\u00D1':
+				ch = 'N';
+				break;
+			case '\u00D2':
+			case '\u00D3':
+			case '\u00D4':
+			case '\u00D5':
+			case '\u00D6':
+				ch = 'O';
+				break;
+			case '\u00D9':
+			case '\u00DA':
+			case '\u00DB':
+			case '\u00DC':
+				ch = 'U';
+				break;
+			case '\u00DD':
+				ch = 'Y';
+				break;
+			case '\u00E0':
+			case '\u00E1':
+			case '\u00E2':
+			case '\u00E3':
+			case '\u00E4':
+			case '\u00E5':
+			case '\u00E6':
+				ch = 'a';
+				break;
+			case '\u00E7':
+				ch = 'c';
+				break;
+			case '\u00E8':
+			case '\u00E9':
+			case '\u00EA':
+			case '\u00EB':
+				ch = 'e';
+				break;
+			case '\u00EC':
+			case '\u00ED':
+			case '\u00EE':
+			case '\u00EF':
+				ch = 'i';
+				break;
+			case '\u00F0':
+				ch = 'd';
+				break;
+			case '\u00F1':
+				ch = 'n';
+				break;
+			case '\u00F2':
+			case '\u00F3':
+			case '\u00F4':
+			case '\u00F5':
+			case '\u00F6':
+				ch = 'o';
+				break;
+			case '\u00F9':
+			case '\u00FA':
+			case '\u00FB':
+			case '\u00FC':
+				ch = 'u';
+				break;
+			case '\u00FD':
+			case '\u00FF':
+				ch = 'y';
+				break;
 		}
 		return ch;
 	}
-    //------------------------------------------------------------------
-    //private static java.util.regex.Pattern float_pattern = java.util.regex.Pattern.compile("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)([eE][+-]?[0-9]+)?");
-    private static java.util.regex.Pattern float_pattern = java.util.regex.Pattern.compile("[+-]?(([0-9]+[.][0-9]+([eE][+-]?[0-9]+)?)|([0-9]+[eE][+-]?[0-9]+))");
+	//------------------------------------------------------------------
+	//private static java.util.regex.Pattern float_pattern = java.util.regex.Pattern.compile("[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)([eE][+-]?[0-9]+)?");
+	private static java.util.regex.Pattern float_pattern = java.util.regex.Pattern.compile("[+-]?(([0-9]+[.][0-9]+([eE][+-]?[0-9]+)?)|([0-9]+[eE][+-]?[0-9]+))");
 	private static String normalize_real_numbers(CharSequence csq) {
 		String res = "";
 		try {
@@ -611,25 +611,25 @@ public class TestRunnerPr53 {
 					sb.append(ch);
 				} else if (Character.isDigit(ch)) {
 					if ((i >= 2)
-						&& (s1.charAt(i-1) == '.')
-						&& Character.isDigit(s1.charAt(i-2))) {
+							&& (s1.charAt(i-1) == '.')
+							&& Character.isDigit(s1.charAt(i-2))) {
 						sb.setLength(sb.length()-2); // "9 ."
 						sb.append('.');
 					} else if ((i >= 2)
-							   && ((s1.charAt(i-1) == 'e')||(s1.charAt(i-1) == 'E'))
-							   && Character.isDigit(s1.charAt(i-2))) {
+							&& ((s1.charAt(i-1) == 'e')||(s1.charAt(i-1) == 'E'))
+							&& Character.isDigit(s1.charAt(i-2))) {
 						sb.setLength(sb.length()-2); // "9 e"
 						sb.append('e');
 					} else if ((i >= 3)
-							   && (s1.charAt(i-1) == '+')
-							   && ((s1.charAt(i-2) == 'e')||(s1.charAt(i-2) == 'E'))
-							   && Character.isDigit(s1.charAt(i-3))) {
+							&& (s1.charAt(i-1) == '+')
+							&& ((s1.charAt(i-2) == 'e')||(s1.charAt(i-2) == 'E'))
+							&& Character.isDigit(s1.charAt(i-3))) {
 						sb.setLength(sb.length()-4); // "9 e +"
 						sb.append('e');
 					} else if ((i >= 3)
-							   && (s1.charAt(i-1) == '-')
-							   && ((s1.charAt(i-2) == 'e')||(s1.charAt(i-2) == 'E'))
-							   && Character.isDigit(s1.charAt(i-3))) {
+							&& (s1.charAt(i-1) == '-')
+							&& ((s1.charAt(i-2) == 'e')||(s1.charAt(i-2) == 'E'))
+							&& Character.isDigit(s1.charAt(i-3))) {
 						sb.setLength(sb.length()-4); // "9 e -"
 						sb.append("e-");
 					} else if ( (sbLastChar != '-') && ! Character.isDigit(sbLastChar)) {
@@ -842,7 +842,7 @@ public class TestRunnerPr53 {
 			fail("\n> Error: la variable ["+memberId+"] no se ha creado correctamente");
 		}
 		return res;
-	} 
+	}
 	//----------------------------------------------------------------------
 	//----------------------------------------------------------------------
 	private static class SysOutCapture {
