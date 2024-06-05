@@ -2,7 +2,8 @@ import alturas.Mundo;
 import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
-        Mundo ps = Mundo.createFromFile("alturas.txt");
+        Mundo ps = new Mundo();
+        ps.cargar("data/alturas.txt");
         System.out.println("\nPaises por altura");
         Mundo.presentaEnConsola(ps.paisesPorAltura());
         System.out.println("\nNúmero de Paises por continente");

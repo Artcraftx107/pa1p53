@@ -23,7 +23,7 @@ public class Mundo {
     }
 
     // Static method to create a Mundo object from a file
-    public static Mundo createFromFile(String file) throws IOException {
+    public void cargar(String file) throws IOException {
         List<Pais> paisList = new ArrayList<>();
         // Try-with-resources to ensure the BufferedReader is closed after use
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -49,7 +49,8 @@ public class Mundo {
         } catch (IOException e) {
             throw new FileNotFoundException("The file " + file + " does not exist in this route");
         }
-        return new Mundo(paisList);
+        Mundo mundoFile = new Mundo(paisList);
+        this.paises = mundoFile.getPaises();
     }
 
     // Method to print a map to the console
@@ -171,10 +172,5 @@ public class Mundo {
         for(Map.Entry<K, V> entry : kvMap.entrySet()){
             p.println(entry.getKey()+"\t"+entry.getValue());
         }
-    }
-
-    // Method to load Pais objects (countries) from a given file into the current instance
-    public void cargar(String file) throws IOException{
-        this.paises = createFromFile(file).getPaises();
     }
 }
