@@ -1,6 +1,5 @@
 package alturas;
 
-import java.util.Comparator;
 import java.util.Objects;
 
 public class Pais implements Comparable<Pais> {
